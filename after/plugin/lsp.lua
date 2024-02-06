@@ -11,7 +11,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'jdtls', 'rust_analyzer', 'lua_ls', 'terraformls'},
+  ensure_installed = {'jdtls', 'java-test', 'java-debug-adapter', 'rust_analyzer', 'lua_ls', 'terraformls',},
   handlers = {
     lsp_zero.default_setup,
     jdtls = lsp_zero.noop,
