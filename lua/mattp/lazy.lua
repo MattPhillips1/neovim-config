@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.4",
+    "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim" ,
       {
@@ -47,7 +47,7 @@ require("lazy").setup({
 
   -- Notes
   {
-    "vhyrro/luarocks.nvim",
+    'vhyrro/luarocks.nvim',
     config = true, -- This automatically runs `require("luarocks-nvim").setup()
   },
   {
