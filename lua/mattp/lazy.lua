@@ -45,6 +45,15 @@ require("lazy").setup({
   -- LSP Progress
   {'j-hui/fidget.nvim'},
 
+  -- Notes
+  {
+    "vhyrro/luarocks.nvim",
+    config = true, -- This automatically runs `require("luarocks-nvim").setup()
+  },
+  {
+    'nvim-neorg/neorg',
+    dependencies = { 'luarocks.nvim' },
+  },
 
   {'sourcegraph/sg.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' }},
 
