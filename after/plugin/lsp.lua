@@ -18,4 +18,20 @@ require('mason-lspconfig').setup({
   }
 })
 
+require('lspconfig').rust_analyzer.setup({
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  settings = {
+    ['rust-analyzer'] = {
+      completion = {
+        postfix = {
+          enable = false,
+        },
+      },
+      checkOnSave = {
+        command = 'clippy',
+      },
+    },
+  },
+})
+
 vim.lsp.set_log_level("trace")

@@ -13,15 +13,6 @@ local root_files = {
   'build.gradle',
 }
 
-local features = {
-  -- change this to `true` to enable codelens
-  codelens = false,
-
-  -- change this to `true` if you have `nvim-dap`,
-  -- `java-test` and `java-debug-adapter` installed
-  debugger = false,
-}
-
 local function get_jdtls_paths()
   ---
   -- we will use this function to get all the paths
@@ -162,7 +153,6 @@ local function jdtls_setup(event)
   local cmd = {
     -- 💀
     'java',
-
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -192,14 +182,6 @@ local function jdtls_setup(event)
 
   local lsp_settings = {
     java = {
-      -- jdt = {
-      --   ls = {
-      --     vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"
-      --   }
-      -- },
-      eclipse = {
-        downloadSources = true,
-      },
       configuration = {
         updateBuildConfiguration = 'interactive',
         runtimes = path.runtimes,
@@ -207,24 +189,6 @@ local function jdtls_setup(event)
       maven = {
         downloadSources = true,
       },
-      implementationsCodeLens = {
-        enabled = true,
-      },
-      referencesCodeLens = {
-        enabled = true,
-      },
-      -- inlayHints = {
-      --   parameterNames = {
-      --     enabled = 'all' -- literals, all, none
-      --   }
-      -- },
-      format = {
-        enabled = true,
-        settings = {
-          url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
-          profile = 'GoogleStyle',
-        }
-      }
     },
     signatureHelp = {
       enabled = true,
@@ -232,7 +196,8 @@ local function jdtls_setup(event)
     completion = {
       favoriteStaticMembers = {
         'org.mockito.Mockito.*',
-        'org.assertj.core.*',
+        'org.assertj.core.api.Assertions.*',
+        'org.junit.jupiter.api.Assertions.*',
       },
     },
     contentProvider = {
