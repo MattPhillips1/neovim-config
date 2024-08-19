@@ -56,5 +56,12 @@ require("lazy").setup({
   },
 
   {'sourcegraph/sg.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' }},
-
+  -- File explorer
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  },
 })
