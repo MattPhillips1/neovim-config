@@ -11,7 +11,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'jdtls', 'rust_analyzer', 'lua_ls', 'terraformls',},
+  ensure_installed = {'jdtls', 'rust_analyzer', 'lua_ls', 'terraformls', 'zls'},
   handlers = {
     lsp_zero.default_setup,
     jdtls = lsp_zero.noop,
@@ -30,6 +30,15 @@ require('lspconfig').rust_analyzer.setup({
       checkOnSave = {
         command = 'clippy',
       },
+    },
+  },
+})
+
+require('lspconfig').zls.setup({
+  settings = {
+    zls = {
+      enable_build_on_save = true,
+      build_on_save_step = "check",
     },
   },
 })

@@ -64,4 +64,8 @@ require("lazy").setup({
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
+  -- Copilot
+  {'zbirenbaum/copilot.lua', cmd = 'Copilot', event = 'InsertEnter'},
+  {'zbirenbaum/copilot-cmp', dependencies = {'zbirenbaum/copilot.lua'}},
+
 })

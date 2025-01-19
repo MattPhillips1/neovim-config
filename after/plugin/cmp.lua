@@ -4,8 +4,8 @@ cmp.setup({
    ['<CR>'] = cmp.mapping.confirm(),
   }),
   sources = cmp.config.sources({
-    { name = 'cody' },
-    { name = 'nvim_lsp' },
+    { name = 'copilot', group_index = 2 },
+    { name = 'nvim_lsp', group_index = 2},
   }),
   window = {
     -- completion = cmp.config.window.bordered(),

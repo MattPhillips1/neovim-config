@@ -18,6 +18,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>f.', function () builtin.find_files({ cwd = require('telescope.utils').buffer_dir() }) end, {})
+vim.keymap.set('n', '<leader>fc', function () builtin.find_files({ cwd = '~/.config/nvim' }) end, {})
 vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 vim.keymap.set('n', '<leader>fr', builtin.resume, {})
 
