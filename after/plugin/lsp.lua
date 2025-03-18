@@ -11,7 +11,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'jdtls', 'rust_analyzer', 'lua_ls', 'terraformls', 'zls'},
+  ensure_installed = {'jdtls', 'rust_analyzer', 'lua_ls', 'starpls', 'terraformls', 'zls'},
   handlers = {
     lsp_zero.default_setup,
     jdtls = lsp_zero.noop,
@@ -41,6 +41,10 @@ require('lspconfig').zls.setup({
       build_on_save_step = "check",
     },
   },
+})
+
+require('lspconfig').starpls.setup({
+  filetypes = {'bzl', 'starlark'}
 })
 
 vim.lsp.set_log_level("trace")
