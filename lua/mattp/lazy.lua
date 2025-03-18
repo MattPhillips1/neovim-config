@@ -55,7 +55,6 @@ require("lazy").setup({
     dependencies = { 'luarocks.nvim' },
   },
 
-  {'sourcegraph/sg.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' }},
   -- File explorer
   {
     'stevearc/oil.nvim',
