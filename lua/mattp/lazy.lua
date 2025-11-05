@@ -40,7 +40,6 @@ require("lazy").setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp', dependencies = { 'L3MON4D3/LuaSnip' }},
 	{'mfussenegger/nvim-jdtls'},
-  {'mfussenegger/nvim-dap'},
   -- LSP Progress
   {'j-hui/fidget.nvim'},
 
@@ -62,8 +61,4 @@ require("lazy").setup({
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
-  -- Copilot
-  {'zbirenbaum/copilot.lua', cmd = 'Copilot', event = 'InsertEnter'},
-  {'zbirenbaum/copilot-cmp', dependencies = {'zbirenbaum/copilot.lua'}},
-
 })

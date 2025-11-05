@@ -26,25 +26,14 @@ lspconfig.starpls.setup({
 })
 lspconfig.terraformls.setup({})
 
-lspconfig.zls.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-
-  -- omit the following line if `zls` is in your PATH
-  -- cmd = { '/path/to/zls_executable' },
-  -- There are two ways to set config options:
-  --   - edit your `zls.json` that applies to any editor that uses ZLS
-  --   - set in-editor config options with the `settings` field below.
-  --
-  -- Further information on how to configure ZLS:
-  -- https://zigtools.org/zls/configure/
+vim.lsp.config('zls', {
   settings = {
     zls = {
       -- Whether to enable build-on-save diagnostics
       --
       -- Further information about build-on save:
       -- https://zigtools.org/zls/guides/build-on-save/
-      enable_build_on_save = true,
-      build_on_save_args = {"check", "--watch", "-fincremental" },
+      build_on_save_args = {"check", "--watch" },
 
       -- Neovim already provides basic syntax highlighting
       semantic_tokens = "partial",
@@ -53,10 +42,10 @@ lspconfig.zls.setup {
       -- zig_exe_path = '/path/to/zig_executable'
     }
   }
-}
+})
 
 vim.lsp.set_log_level("trace")
 vim.keymap.set('n', 'gri', require('telescope.builtin').lsp_implementations)
 vim.keymap.set('n', 'grd', require('telescope.builtin').lsp_definitions)
 vim.keymap.set('n', 'grr', require('telescope.builtin').lsp_references)
-
+vim.diagnostic.config({ virtual_lines = {current_line = true}})
