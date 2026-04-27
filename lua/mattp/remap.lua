@@ -10,3 +10,4 @@ local function current_date()
 end
 
 vim.keymap.set('n', '<leader>cd', current_date)
+vim.keymap.set('t', '<C-x>', '<C-\\><C-n>')
