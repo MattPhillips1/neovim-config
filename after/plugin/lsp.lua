@@ -1,5 +1,6 @@
 require('mason').setup({})
 
+vim.lsp.enable('lua_ls')
 vim.lsp.enable('zls')
 
 vim.lsp.set_log_level("trace")
