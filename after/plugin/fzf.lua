@@ -9,3 +9,5 @@ vim.keymap.set('n', '<leader>fr', fzf.resume, {})
 vim.keymap.set('n', 'gri', fzf.lsp_implementations)
 vim.keymap.set('n', 'grd', fzf.lsp_definitions)
 vim.keymap.set('n', 'grr', fzf.lsp_references)
+
+fzf.register_ui_select()
