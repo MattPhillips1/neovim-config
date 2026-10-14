@@ -3,6 +3,7 @@ vim.pack.add({
   -- dep for fzf
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/rose-pine/neovim",
+  "https://github.com/ellisonleao/gruvbox.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/tpope/vim-rhubarb",
