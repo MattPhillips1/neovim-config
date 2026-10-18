@@ -3,7 +3,9 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "{", "{}<LEFT>")
 vim.keymap.set("i", "(", "()<LEFT>")
 vim.keymap.set("i", "[", "[]<LEFT>")
-
+vim.keymap.set("i", "<", "><LEFT>")
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
 
 local function current_date()
   vim.api.nvim_paste(os.date("%Y-%m-%d"), false, -1)
